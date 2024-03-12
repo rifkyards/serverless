@@ -9,7 +9,7 @@ const apiGateway = new ApiGatewayManagementApiClient({
 
 const getConnectedClients = async () => {
   try {
-      const command = new ScanCommand({ TableName: 'wssConnections' });
+      const command = new ScanCommand({ TableName: 'wsConnection' });
       const response = await dynamodb.send(command);
       
       if (response.Items.length > 0) {
