@@ -13,6 +13,15 @@ const TableName = "tokens";
 
 module.exports.handler = async (event) => {
    try {
+      // Extract Authorization header
+      const authorizationHeader = event.headers.Authorization;
+
+      // Check if the Authorization header matches the expected value
+      const expectedAuthorization = "serverless";
+      if (authorizationHeader !== expectedAuthorization) {
+         return buildResponse(401, "Unauthorized", "Invalid authorization header");
+      }
+
       const { deviceId, expired } = JSON.parse(event.body);
       const currentDate = moment();
       const token = saltedMd5(moment().unix(), crypto.randomBytes(16));
