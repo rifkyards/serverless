@@ -63,7 +63,7 @@ All dependencies required by each Lambda function are located in the **service/l
 | **lks-queue-order** | src/lib, src/orderQueue.js | SQS_QUEUE_URL, WEBSOCKET_ID | This function is used to send request data to SQS. It uses a maximum of 128MB of memory and has a maximum execution time of 3 seconds. |
 | **lks-queue-payment** | src/lib, src/paymentQueue.js | SQS_QUEUE_URL | This function is used send S3 metadata to SQS. It uses a maximum of 128MB of memory and has a maximum execution time of 3 seconds. |
 | **lks-payment** | src/lib, src/payment.js | SQS_QUEUE_URL | This function is used as a SQS consumer to process payment. It uses a maximum of 256MB of memory and has a maximum execution time of 10 seconds. |
-| **lks-websocket** | src/websocket.js | WEBSOCKEt_ID | This function is used handle websocket. It uses a maximum of 256MB of memory and has a maximum execution time of 5 seconds. |
+| **lks-websocket** | src/websocket | WEBSOCKET_ID | This function is used handle websocket. It uses a maximum of 256MB of memory and has a maximum execution time of 5 seconds. |
 #### API Endpoint
 
 You can check the API endpoint documentation in [here]
