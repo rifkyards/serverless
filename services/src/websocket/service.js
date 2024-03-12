@@ -4,7 +4,7 @@ const { ApiGatewayManagementApiClient, PostToConnectionCommand } = require("/opt
 const dynamodb = new DynamoDBClient({ region: 'us-east-1' });
 const apiGateway = new ApiGatewayManagementApiClient({
    apiVersion: '2018-11-29',
-   endpoint: `https://${process.env.WEBSOCKET_ID}.execute-api.us-east-1.amazonaws.com/dev`, // Retrieve the API endpoint from environment variables
+   endpoint: `https://${process.env.WEBSOCKET_ID}.execute-api.us-east-1.amazonaws.com/production`, // Retrieve the API endpoint from environment variables
 });
 
 const getConnectedClients = async () => {
